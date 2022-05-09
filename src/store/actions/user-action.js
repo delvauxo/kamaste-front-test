@@ -15,9 +15,8 @@ export const userToken = createAction('user/token', ({ token, expire }) => {
 });
 
 export const userLogout = createAction('user/logout');
-
 export const userSendError = createAction('user/sendError');
-export const userClearError = createAction('user/clearRrror');
+export const userClearError = createAction('user/clearError');
 
 export const userLogin = ({ identifier, password }) => {
     return (dispatch) => {

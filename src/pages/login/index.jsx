@@ -2,11 +2,10 @@ import { Box, Button, TextField } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { userClearError, userLogin } from '../../store/actions/user-action';
-import { useNavigate } from 'react-router-dom';
-import { useRedirectLogUser } from '../../hooks/redirect-hook';
+import { useRedirectAdmin, useRedirectLogUser } from '../../hooks/redirect-hook';
 
 const loginSchema = yup.object({
     login: yup.string().trim().required(),
@@ -15,6 +14,9 @@ const loginSchema = yup.object({
 
 
 const LoginPage = () => {
+    // Redirect to admin dashboard if connected as admin.
+    useRedirectAdmin();
+    // Redirect to home page if not connected as admin.
     useRedirectLogUser();
 
     const dispatch = useDispatch();

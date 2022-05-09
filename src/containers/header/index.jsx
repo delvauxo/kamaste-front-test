@@ -1,15 +1,15 @@
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import HomeIcon from '@mui/icons-material/Home';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../store/actions/user-action';
+import style from './header.module.css';
 
 const Header = () => {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
-
-    console.log(user.pseudo);
+    const navigate = useNavigate();
 
     return (
         <header>
@@ -40,9 +40,12 @@ const Header = () => {
                             <Button color='inherit' component={NavLink} to='/login'>Login</Button>
                         </>) : (
                             <>
-                                <Button color='inherit' component='div'>{user.pseudo}</Button>
+                                <Button color='inherit' component='div'>
+                                    <Link to={'/admin'} className={style.adminLink}>Dashboard</Link>
+                                </Button>
                                 <Button color='inherit' component='div' onClick={() => {
                                     dispatch(userLogout());
+                                    navigate('/');
                                 }}>Logout</Button>
                             </>
                         )

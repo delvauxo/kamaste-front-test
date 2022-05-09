@@ -1,14 +1,14 @@
-import forum from './forum.jpg';
+import EspacesList from '../../components/espaces-list/espaces-list';
 import style from './home.module.css';
 
 const HomePage = () => {
-    return (<>
-        <h1>Accueil</h1>
-        <p>Bienvenue sur le forum</p>
-        <div className={style.forumImage}>
-            <img src={forum} alt='forum' />
-        </div>
-    </>);
+    return (
+        <>
+            <h1>Accueil</h1>
+            <p>Bienvenue sur notre site</p>
+            <EspacesList />
+        </>
+    );
 };
 
 export default HomePage;
