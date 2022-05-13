@@ -1,49 +1,51 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useRedirectNotAdmin } from '../../../hooks/redirect-hook';
-import { Box } from '@mui/system';
 import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Box } from '@mui/system';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useRedirectNotAdmin } from '../../../hooks/redirect-hook';
 
-const AdminEspaces = () => {
+const AdminServices = () => {
+
     // Redirect to home page if not connected as admin.
     useRedirectNotAdmin();
 
     // Get user info (token, admin status, id).
     const user = useSelector(state => state.user);
 
-    const [espaces, setEspaces] = useState([]);
+    const [services, setServices] = useState([]);
 
     // Get data from API.
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_BACK_URL}/api/espace`)
+        axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/service`)
             .then(
-                ({ data }) => { setEspaces(data.rows); }
+                ({ data }) => { setServices(data.rows); }
             );
     }, []);
 
     // Table - Create data for MUI table.
-    function createData(id, name) {
-        return { id, name };
+    function createData(id, nom) {
+        return { id, nom };
     }
 
-    const rows = espaces.map(
-        (espace) => createData(espace.id, espace.nom)
-    );
-
+    // Delete function.
     const itemDelete = (id) => {
-        axios.delete(`${process.env.REACT_APP_BACK_URL}/api/espace/${id}`, {
+        axios.delete(`${process.env.REACT_APP_BACK_URL}/api/body/service/${id}`, {
             headers: { Authorization: `Bearer ${user.token}` }
         })
             // Reload services without the deleted item.
-            .then(() => { setEspaces(espaces.filter(espace => espace.id !== id)); });
+            .then(() => { setServices(() => services.filter(service => service.id !== id)); });
     };
+
+    const rows = services.map(
+        service => (createData(service.id, service.nom))
+    );
 
     return (
         <>
-            <h1>Espaces</h1>
+            <h1>Services</h1>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -55,16 +57,16 @@ const AdminEspaces = () => {
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
-                            <TableRow
-                                key={row.name}
+                            < TableRow
+                                key={row.id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 hover={true}
                             >
                                 <TableCell component="th" scope="row">
                                     {row.id}
                                 </TableCell>
-                                <TableCell align="left">{row.name}</TableCell>
-                                <TableCell align="left" width={275}>
+                                <TableCell>{row.nom}</TableCell>
+                                <TableCell width={250}>
                                     <Box sx={{ '& button': { mx: 1, textTransform: 'none' } }}>
                                         <Link to={'./' + row.id}>
                                             <Button variant="contained" size="small" color="warning">Modifier</Button>
@@ -86,4 +88,4 @@ const AdminEspaces = () => {
     );
 };
 
-export default AdminEspaces;
+export default AdminServices;

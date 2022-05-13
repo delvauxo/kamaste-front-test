@@ -1,8 +1,14 @@
 import AboutPage from '../pages/about';
 import AdminPage from '../pages/admin';
+// Espaces.
 import AdminEspaces from '../pages/admin/espaces';
 import AdminEspaceCreate from '../pages/admin/espaces/create';
 import AdminEspaceEdit from '../pages/admin/espaces/edit';
+// Services.
+import AdminServices from '../pages/admin/services';
+import AdminServiceCreate from '../pages/admin/services/create';
+import AdminServiceEdit from '../pages/admin/services/edit';
+// Others.
 import BodyPage from '../pages/body';
 import Error404 from '../pages/errors/404';
 import HomePage from '../pages/home';
@@ -62,6 +68,20 @@ export const appRoute = [
                     }
                 ]
             },
+            {
+                path: 'services',
+                children: [
+                    {
+                        index: true, element: <AdminServices />
+                    },
+                    {
+                        path: 'nouveau', element: <AdminServiceCreate />
+                    },
+                    {
+                        path: ':id', element: <AdminServiceEdit />
+                    }
+                ]
+            }
         ]
     },
     { path: '*', element: <Error404 /> },

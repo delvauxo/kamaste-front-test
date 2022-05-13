@@ -15,7 +15,7 @@ const AdminEspaceEdit = () => {
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_BACK_URL}/api/espace/${id}`)
             .then(({ data }) => { setEspace(data.result); });
-    }, []);
+    }, [id]);
 
     return (
         <>

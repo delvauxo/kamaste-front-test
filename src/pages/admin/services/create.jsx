@@ -1,16 +1,16 @@
 import { useRedirectNotAdmin } from '../../../hooks/redirect-hook';
-import EspaceForm from './form';
+import ServiceForm from './form';
 
-const AdminEspaceCreate = () => {
+const AdminServiceCreate = () => {
     // Redirect to home page if not connected as admin.
     useRedirectNotAdmin();
 
     return (
         <>
-            <h2>Ajouter un nouvel espace</h2>
-            <EspaceForm edit={false} />
+            <h2>Ajouter un nouveau service</h2>
+            <ServiceForm />
         </>
     );
 };
 
-export default AdminEspaceCreate;
+export default AdminServiceCreate;
