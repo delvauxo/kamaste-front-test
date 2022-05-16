@@ -1,30 +1,29 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ServiceForm from './form';
 import { useRedirectNotAdmin } from '../../../hooks/redirect-hook';
+import EquipementForm from './form';
 
-const AdminServiceEdit = () => {
-
+const AdminEquipementEdit = () => {
+    // Redirect to home page if not connected as admin.
     useRedirectNotAdmin();
 
-    // Get Id item to edit.
     const { id } = useParams();
-    const [service, SetService] = useState();
+    const [item, setItem] = useState();
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/service/${id}`)
+        axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/equipement/${id}`)
             .then(
-                ({ data }) => { SetService(data.result); }
+                ({ data }) => { setItem(data.result); }
             );
     }, [id]);
 
     return (
         <>
             <h2>Modifier</h2>
-            <ServiceForm item={service} edit={true} />
+            <EquipementForm edit={true} item={item} />
         </>
     );
 };
 
-export default AdminServiceEdit;
+export default AdminEquipementEdit;

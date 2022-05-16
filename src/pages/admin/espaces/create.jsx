@@ -7,7 +7,7 @@ const AdminEspaceCreate = () => {
 
     return (
         <>
-            <h2>Ajouter un nouvel espace</h2>
+            <h2>Ajouter un espace</h2>
             <EspaceForm edit={false} />
         </>
     );

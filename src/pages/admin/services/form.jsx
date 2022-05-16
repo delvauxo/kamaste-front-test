@@ -6,8 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const ServiceForm = ({ item, edit }) => {
 
-    console.log(item);
-
     const navigate = useNavigate();
     const user = useSelector(state => state.user);
     const { handleSubmit, control } = useForm();

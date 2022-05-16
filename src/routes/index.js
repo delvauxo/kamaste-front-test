@@ -1,43 +1,30 @@
-import AboutPage from '../pages/about';
+// Admin.
 import AdminPage from '../pages/admin';
 // Espaces.
 import AdminEspaces from '../pages/admin/espaces';
 import AdminEspaceCreate from '../pages/admin/espaces/create';
 import AdminEspaceEdit from '../pages/admin/espaces/edit';
+// Equipements.
+import AdminEquipements from '../pages/admin/equipements';
+import AdminEquipementCreate from '../pages/admin/equipements/create';
+import AdminEquipementEdit from '../pages/admin/equipements/edit';
 // Services.
 import AdminServices from '../pages/admin/services';
 import AdminServiceCreate from '../pages/admin/services/create';
 import AdminServiceEdit from '../pages/admin/services/edit';
-// Others.
-import BodyPage from '../pages/body';
-import Error404 from '../pages/errors/404';
-import HomePage from '../pages/home';
+// Login.
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
-// Examples (to delete).
-import SubjectPage from '../pages/subjects';
-import SubjectCreatePage from '../pages/subjects/create';
-import SubjectShowPage from '../pages/subjects/show';
-
+// Public.
+import BodyPage from '../pages/body';
+import AboutPage from '../pages/about';
+import Error404 from '../pages/errors/404';
+import HomePage from '../pages/home';
 
 export const appRoute = [
     { path: '', element: <HomePage /> },
     {
         path: 'body', element: <BodyPage />
-    },
-    {
-        path: 'subjects',
-        children: [
-            {
-                index: true, element: <SubjectPage />
-            },
-            {
-                path: ':id', element: <SubjectShowPage />
-            },
-            {
-                path: 'create', element: <SubjectCreatePage />
-            }
-        ]
     },
     {
         path: 'about', element: <AboutPage />
@@ -81,10 +68,22 @@ export const appRoute = [
                         path: ':id', element: <AdminServiceEdit />
                     }
                 ]
+            },
+            {
+                path: 'equipements',
+                children: [
+                    {
+                        index: true, element: <AdminEquipements />
+                    },
+                    {
+                        path: 'nouveau', element: <AdminEquipementCreate />
+                    },
+                    {
+                        path: ':id', element: <AdminEquipementEdit />
+                    }
+                ]
             }
         ]
     },
     { path: '*', element: <Error404 /> },
 ];
-
-

@@ -1,16 +1,16 @@
 import { useRedirectNotAdmin } from '../../../hooks/redirect-hook';
-import ServiceForm from './form';
+import EquipementForm from './form';
 
-const AdminServiceCreate = () => {
+const AdminEquipementCreate = () => {
     // Redirect to home page if not connected as admin.
     useRedirectNotAdmin();
 
     return (
         <>
-            <h2>Ajouter un service</h2>
-            <ServiceForm edit={false} />
+            <h2>Ajouter un équipement</h2>
+            <EquipementForm edit={false} />
         </>
     );
 };
 
-export default AdminServiceCreate;
+export default AdminEquipementCreate;
