@@ -1,10 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Stack, TextField } from '@mui/material';
 import { Box } from '@mui/system';
-import { useEffect } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
 import { useRedirectLogUser } from '../../hooks/redirect-hook';
 import { userRegister } from '../../store/actions/user-action';
