@@ -21,7 +21,7 @@ import AboutPage from '../pages/about';
 import Error404 from '../pages/errors/404';
 import HomePage from '../pages/home';
 
-export const appRouteBody = [
+export const appRoute = [
     { path: '', element: <HomePage /> },
     { path: 'register', element: <RegisterPage /> },
     { path: 'login', element: <LoginPage /> },
