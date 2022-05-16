@@ -16,14 +16,21 @@ const EspacesList = () => {
     const espacesJSX = espaces.map(
         (espace) => (
             <Link key={espace.id} to={`${espace.nom.toLowerCase()}`}>
-                <li>{espace.nom}</li>
+                <div id={`home-img-${espace.nom.toLowerCase()}`}>
+                    <img src={`/images/home_${espace.nom.toLowerCase()}.jpg`} alt={espace.nom} />
+                    <div id={`home-img-caption-${espace.nom.toLowerCase()}`}>
+                        <span>{espace.nom.toUpperCase()}</span>
+                    </div>
+                </div>
             </Link>
         )
     );
 
     return (
         <>
-            {espacesJSX}
+            <div id='home-img-container'>
+                {espacesJSX}
+            </div>
         </>
     );
 };

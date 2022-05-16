@@ -1,0 +1,68 @@
+@import "../../styles/variables";
+
+#home-logo {
+    margin-top: 2.5rem;
+    width: 200px;
+}
+
+.home.app {
+    background-color: $secondaryColor;
+    text-align: center;
+}
+
+#home-img-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    >a {
+        text-decoration: none;
+        color: inherit;
+        width: 50%;
+
+        #home-img-body,
+        #home-img-mind {
+            position: relative;
+
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            #home-img-caption-body,
+            #home-img-caption-mind {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 6px;
+                border-radius: 10px;
+                background-color: rgba(0, 0, 0, .35);
+                transition: all .5s;
+
+                >span {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 2rem;
+                    color: white;
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        border: 2px solid $secondaryColor;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0);
+                }
+            }
+        }
+    }
+}
