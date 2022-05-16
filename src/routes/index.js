@@ -21,20 +21,10 @@ import AboutPage from '../pages/about';
 import Error404 from '../pages/errors/404';
 import HomePage from '../pages/home';
 
-export const appRoute = [
+export const appRouteBody = [
     { path: '', element: <HomePage /> },
-    {
-        path: 'body', element: <BodyPage />
-    },
-    {
-        path: 'about', element: <AboutPage />
-    },
-    {
-        path: 'register', element: <RegisterPage />
-    },
-    {
-        path: 'login', element: <LoginPage />
-    },
+    { path: 'register', element: <RegisterPage /> },
+    { path: 'login', element: <LoginPage /> },
     {
         path: 'admin',
         children: [
@@ -83,6 +73,17 @@ export const appRoute = [
                     }
                 ]
             }
+        ]
+    },
+    {
+        path: 'body',
+        children: [
+            {
+                index: true, element: <BodyPage />
+            },
+            {
+                path: 'about', element: <AboutPage />
+            },
         ]
     },
     { path: '*', element: <Error404 /> },

@@ -5,10 +5,10 @@ import './App.css';
 import Footer from './containers/footer';
 import Header from './containers/header';
 import HeaderAdmin from './containers/header/admin';
-import { appRoute } from './routes';
+import { appRouteBody } from './routes';
 
 function App() {
-  const routes = useRoutes(appRoute);
+  const routes = useRoutes(appRouteBody);
   const user = useSelector(state => state.user);
 
   return (<>

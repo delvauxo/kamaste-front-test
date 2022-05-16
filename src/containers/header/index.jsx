@@ -27,10 +27,10 @@ const Header = () => {
                         <HomeIcon />
                     </IconButton>
                     <Box sx={{ display: 'flex', flexGrow: 1, gap: '20px' }}>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/subjects' sx={{ textDecoration: 'none' }}>
-                            Subjects
+                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/equipements' sx={{ textDecoration: 'none' }}>
+                            Équipements
                         </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/about' sx={{ textDecoration: 'none' }}>
+                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/about' sx={{ textDecoration: 'none' }}>
                             About
                         </Typography>
                     </Box>
