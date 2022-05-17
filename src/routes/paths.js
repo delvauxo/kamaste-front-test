@@ -20,6 +20,10 @@ export const paths = [
         'className': 'propos'
     },
     {
+        'path': '/body/moments',
+        'className': 'body-moments'
+    },
+    {
         'path': '/body/equipements',
         'className': 'body-equipements'
     },

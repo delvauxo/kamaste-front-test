@@ -13,6 +13,9 @@ const AdminPage = () => {
                     <Link to={'espaces'}>Espaces</Link>
                 </li>
                 <li>
+                    <Link to={'moments'}>Moments</Link>
+                </li>
+                <li>
                     <Link to={'equipements'}>Equipements</Link>
                 </li>
                 <li>

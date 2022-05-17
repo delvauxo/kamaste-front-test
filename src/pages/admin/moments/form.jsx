@@ -4,38 +4,27 @@ import { Controller, useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-const ServiceForm = ({ item, edit }) => {
+const MomentForm = ({ item, edit }) => {
 
     const navigate = useNavigate();
     const user = useSelector(state => state.user);
     const { handleSubmit, control } = useForm();
 
     const onSubmit = (data) => {
-
         let promise;
-
         if (edit) {
-            // PUT
-            promise = axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/service/${item.id}`, data, {
-                headers: {
-                    'Authorization': 'Bearer ' + user.token
-                }
+            // PUT.
+            promise = axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/moment/${item.id}`, data, {
+                headers: { Authorization: `Bearer ${user.token}` }
             });
         } else {
-            // POST
-            promise = axios.post(`${process.env.REACT_APP_BACK_URL}/api/body/service`, data, {
-                headers: {
-                    'Authorization': 'Bearer ' + user.token
-                }
+            // POST.
+            promise = axios.post(`${process.env.REACT_APP_BACK_URL}/api/body/moment`, data, {
+                headers: { Authorization: `Bearer ${user.token}` }
             });
         }
 
-        // Redirect.
-        promise.then(
-            () => { navigate('/admin/services'); }
-        );
-
-
+        promise.then(navigate('/admin/moments'));
     };
 
     if (item === undefined && edit === true) {
@@ -76,7 +65,7 @@ const ServiceForm = ({ item, edit }) => {
                             />}
                         />
                     </section>
-                    <Link to={'/admin/services'}>
+                    <Link to={'/admin/moments'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>
                     </Link>
                     <Button sx={{ mt: 2, mx: 2, textTransform: 'none' }} variant="contained" type="submit">Valider</Button>
@@ -84,6 +73,7 @@ const ServiceForm = ({ item, edit }) => {
             </>
         );
     }
+
 };
 
-export default ServiceForm;
+export default MomentForm;;;

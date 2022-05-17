@@ -6,8 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const EquipementForm = ({ edit, item }) => {
 
-    console.log(item, edit);
-
     const navigate = useNavigate();
     const user = useSelector(state => state.user);
     const { handleSubmit, control } = useForm();
@@ -51,6 +49,23 @@ const EquipementForm = ({ edit, item }) => {
                             {...field}
                         />
                         }
+                    />
+                    <Controller
+                        name="description"
+                        control={control}
+                        defaultValue={item ? item.description : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Description"
+                            value={field.value}
+                            variant="filled"
+                            minRows={3}
+                            maxRows={Infinity}
+                            multiline
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
                     />
                     <Link to={'/admin/equipements'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>
