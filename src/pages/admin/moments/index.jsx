@@ -16,7 +16,7 @@ const AdminMoments = () => {
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/moment`)
             .then(
-                ({ data }) => { setMoments(data.rows); }
+                ({ data }) => { setMoments(data.result.rows); }
             );
     }, []);
 

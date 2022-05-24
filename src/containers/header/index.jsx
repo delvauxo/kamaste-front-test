@@ -19,6 +19,9 @@ const Header = () => {
                         <img src="/images/logo.png" alt="Kamaste logo" width={75} />
                     </Link>
                     <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center', gap: '20px', ml: 3 }}>
+                        <Typography color='inherit' variant='h6' component={NavLink} to='/body' sx={{ textDecoration: 'none' }}>
+                            Body
+                        </Typography>
                         <Typography color='inherit' variant='h6' component={NavLink} to='/body/about' sx={{ textDecoration: 'none' }}>
                             Qui sommes-nous ?
                         </Typography>
@@ -31,8 +34,8 @@ const Header = () => {
                         <Typography color='inherit' variant='h6' component={NavLink} to='/body/services' sx={{ textDecoration: 'none' }}>
                             Services
                         </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/agenda' sx={{ textDecoration: 'none' }}>
-                            Agenda
+                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/reserver' sx={{ textDecoration: 'none' }}>
+                            Réserver
                         </Typography>
                         <Typography color='inherit' variant='h6' component={NavLink} to='/body/contact' sx={{ textDecoration: 'none' }}>
                             Contact

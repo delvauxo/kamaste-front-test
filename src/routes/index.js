@@ -20,10 +20,13 @@ import AdminServiceEdit from '../pages/admin/services/edit';
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
 // Public.
+import HomePage from '../pages/home';
 import BodyPage from '../pages/body';
 import AboutPage from '../pages/about';
+import MomentsPage from '../pages/moments';
+import EquipementsPage from '../pages/equipements';
+import ServicesPage from '../pages/services';
 import Error404 from '../pages/errors/404';
-import HomePage from '../pages/home';
 
 export const appRoute = [
     { path: '', element: <HomePage /> },
@@ -71,6 +74,9 @@ export const appRoute = [
         path: 'body',
         children: [
             { index: true, element: <BodyPage /> },
+            { path: 'moments', element: <MomentsPage /> },
+            { path: 'equipements', element: <EquipementsPage /> },
+            { path: 'services', element: <ServicesPage /> },
             { path: 'about', element: <AboutPage /> },
         ]
     },

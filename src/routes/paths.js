@@ -1,3 +1,5 @@
+// Add a CSS class for all specific URL on the div right after #root.
+
 export const paths = [
     {
         'path': '/',
