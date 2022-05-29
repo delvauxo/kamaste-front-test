@@ -21,7 +21,7 @@ const AdminServices = () => {
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/service`)
             .then(
-                ({ data }) => { setServices(data.rows); }
+                ({ data }) => { setServices(data.result.rows); }
             );
     }, []);
 
