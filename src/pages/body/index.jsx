@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import SimpleSlider from '../../components/slider/slider';
 
 
 const BodyPage = () => {
@@ -60,14 +60,20 @@ const BodyPage = () => {
             <ul>
                 {equipementsJSX}
             </ul>
+            <SimpleSlider items={equipements} />
+
             <h3>Moments</h3>
             <ul>
                 {momentsJSX}
             </ul>
+            <SimpleSlider items={moments} />
+
             <h3>Services</h3>
             <ul>
                 {servicesJSX}
             </ul>
+            <SimpleSlider items={services} />
+
             <h3>Agenda</h3>
             {/* <iframe src="https://kamaste.youcanbook.me/?noframe=true&skipHeaderFooter=true" id="ycbmiframekamaste" frameborder="0" allowtransparency="true"></iframe> */}
             <h3>Témoignages</h3>
