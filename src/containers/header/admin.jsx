@@ -45,6 +45,9 @@ const HeaderAdmin = () => {
                         <Typography color='inherit' variant='h6' component={NavLink} to='/admin/membres' sx={{ textDecoration: 'none' }}>
                             Membres
                         </Typography>
+                        <Typography color='inherit' variant='h6' component={NavLink} to='/admin/upload' sx={{ textDecoration: 'none' }}>
+                            Upload
+                        </Typography>
                     </Box>
                     <Button color='inherit' component='div'>
                         <Link to={'/admin'} className={style.adminLink}>{user.pseudo}</Link>
