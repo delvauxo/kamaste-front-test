@@ -54,10 +54,6 @@ const BodyPage = () => {
     return (
         <>
             <h1>Espace Body</h1>
-
-
-            <img src="http://localhost:8080/uploads/zerg_logo.jpg" alt="zerg" />
-
             <p>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
             <p>« Fais de ta vie un rêve, et d'un rêve, une réalité".  Antoine de Saint-Exupéry</p>
             <h3>Equipements</h3>

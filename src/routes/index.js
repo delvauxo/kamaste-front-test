@@ -16,9 +16,6 @@ import AdminEquipementEdit from '../pages/admin/equipements/edit';
 import AdminServices from '../pages/admin/services';
 import AdminServiceCreate from '../pages/admin/services/create';
 import AdminServiceEdit from '../pages/admin/services/edit';
-// Upload.
-import UploadFile from '../pages/admin/upload';
-
 // Login.
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
@@ -70,9 +67,6 @@ export const appRoute = [
                     { path: 'nouveau', element: <AdminEquipementCreate /> },
                     { path: ':id', element: <AdminEquipementEdit /> }
                 ]
-            },
-            {
-                path: 'upload', element: <UploadFile />
             }
         ]
     },
