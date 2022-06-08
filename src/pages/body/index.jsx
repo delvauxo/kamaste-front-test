@@ -60,19 +60,19 @@ const BodyPage = () => {
             <ul>
                 {equipementsJSX}
             </ul>
-            <SimpleSlider items={equipements} />
+            <SimpleSlider items={equipements} type="equipements" />
 
             <h3>Moments</h3>
             <ul>
                 {momentsJSX}
             </ul>
-            <SimpleSlider items={moments} />
+            <SimpleSlider items={moments} type="moments" />
 
             <h3>Services</h3>
             <ul>
                 {servicesJSX}
             </ul>
-            <SimpleSlider items={services} />
+            <SimpleSlider items={services} type="services" />
 
             <h3>Agenda</h3>
             {/* <iframe src="https://kamaste.youcanbook.me/?noframe=true&skipHeaderFooter=true" id="ycbmiframekamaste" frameborder="0" allowtransparency="true"></iframe> */}

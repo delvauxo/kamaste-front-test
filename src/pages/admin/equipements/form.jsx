@@ -12,24 +12,36 @@ const EquipementForm = ({ edit, item }) => {
 
     const onSubmit = async (data) => {
 
-        const nom = document.getElementById("nom");
-        const description = document.getElementById("description");
+        // Instanciate new FormData for multipart form (file upload).
+        const fd = new FormData();
+        fd.append("nom", data.nom);
+        fd.append("description", data.description);
+        // Get file DOM element.
         const file = document.getElementById("pastille");
-        let fd = new FormData();
-        fd.append("nom", nom.value);
-        fd.append("description", description.value);
-        fd.append("pastille", file.files[0]);
+        // If new file, send file to FormData (Multer will use it).
+        if (file.files[0]) {
+            fd.append("pastille", file.files[0]);
+        }
 
         if (edit) {
-            // PUT.
+            //// PUT.
+            if (file.files[0]) {
+                // If new file.
+                fd.append("fileToDelete", item.pastille);
+            } else {
+                // If no new file.
+                fd.append("fileToKeep", item.pastille);
+            }
+            // Request.
             await axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/equipement/${item.id}`, fd, {
                 headers: {
                     Authorization: `Bearer ${user.token}`
                 }
             })
+                // Redirection.
                 .then(() => { navigate('/admin/equipements'); });
         } else {
-            // POST.
+            //// POST.
             await axios.post(`${process.env.REACT_APP_BACK_URL}/api/body/equipement`, fd, {
                 headers: {
                     Authorization: `Bearer ${user.token}`
@@ -38,7 +50,6 @@ const EquipementForm = ({ edit, item }) => {
                 .then(() => { navigate('/admin/equipements'); });
         }
     };
-
 
     if (item === undefined && edit === true) {
         return <h2>Chargement...</h2>;
@@ -53,7 +64,6 @@ const EquipementForm = ({ edit, item }) => {
                         rules={{ required: true }}
                         defaultValue={(item ? item.nom : '')}
                         render={({ field }) => <TextField
-                            id='nom'
                             label="Nom"
                             variant="filled"
                             fullWidth
@@ -67,7 +77,6 @@ const EquipementForm = ({ edit, item }) => {
                         defaultValue={item ? item.description : ""}
                         rules={{ required: true }}
                         render={({ field }) => <TextField
-                            id='description'
                             label="Description"
                             value={field.value}
                             variant="filled"
@@ -82,7 +91,7 @@ const EquipementForm = ({ edit, item }) => {
                     <Controller
                         name="pastille"
                         control={control}
-                        rules={{ required: true }}
+                        rules={{ required: false }}
                         render={({ field }) => <TextField
                             id='pastille'
                             type='file'
@@ -94,7 +103,7 @@ const EquipementForm = ({ edit, item }) => {
                         }
                     />
                     <div>
-                        {item && <img width='200' src={`http://localhost:8080/${item.pastille}`} alt={item.pastille} />}
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/equipements/${item.pastille}`} alt={item.pastille} />}
                     </div>
                     <Link to={'/admin/equipements'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>

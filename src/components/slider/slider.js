@@ -4,7 +4,7 @@ import sliderSettings from "./slider-settings";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const SimpleSlider = ({ items }) => {
+const SimpleSlider = ({ items, type }) => {
 
     var settings = {
         autoplay: true,
@@ -20,7 +20,7 @@ const SimpleSlider = ({ items }) => {
         item => (
             <div key={item.id} className='slider-item'>
                 <h3>{item.nom}</h3>
-                <img className='pastille' src={`http://localhost:8080/${item.pastille}`} alt={item.nom} />
+                <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${type}/${item.pastille}`} alt={item.nom} />
             </div>
         )
     );
