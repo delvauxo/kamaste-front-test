@@ -4,27 +4,52 @@ import { Controller, useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-const MomentForm = ({ item, edit }) => {
+const MomentForm = ({ edit, item }) => {
 
     const navigate = useNavigate();
     const user = useSelector(state => state.user);
     const { handleSubmit, control } = useForm();
 
-    const onSubmit = (data) => {
-        let promise;
-        if (edit) {
-            // PUT.
-            promise = axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/moment/${item.id}`, data, {
-                headers: { Authorization: `Bearer ${user.token}` }
-            });
-        } else {
-            // POST.
-            promise = axios.post(`${process.env.REACT_APP_BACK_URL}/api/body/moment`, data, {
-                headers: { Authorization: `Bearer ${user.token}` }
-            });
+    const onSubmit = async (data) => {
+
+        // Instanciate new FormData for multipart form (file upload).
+        const fd = new FormData();
+        fd.append("nom", data.nom);
+        fd.append("lien", data.lien);
+        fd.append("description", data.description);
+        // Get file DOM element.
+        const file = document.getElementById("pastille");
+        // If new file, send file to FormData (Multer will use it).
+        if (file.files[0]) {
+            fd.append("pastille", file.files[0]);
         }
 
-        promise.then(navigate('/admin/moments'));
+        if (edit) {
+            //// PUT.
+            if (file.files[0]) {
+                // If new file.
+                fd.append("fileToDelete", item.pastille);
+            } else {
+                // If no new file.
+                fd.append("fileToKeep", item.pastille);
+            }
+            // Request.
+            await axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/moment/${item.id}`, fd, {
+                headers: {
+                    Authorization: `Bearer ${user.token}`
+                }
+            })
+                // Redirection.
+                .then(() => { navigate('/admin/moments'); });
+        } else {
+            //// POST.
+            await axios.post(`${process.env.REACT_APP_BACK_URL}/api/body/moment`, fd, {
+                headers: {
+                    Authorization: `Bearer ${user.token}`
+                }
+            })
+                .then(() => { navigate('/admin/moments'); });
+        }
     };
 
     if (item === undefined && edit === true) {
@@ -33,38 +58,69 @@ const MomentForm = ({ item, edit }) => {
         return (
             <>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <section>
-                        <Controller
-                            name="nom"
-                            control={control}
-                            defaultValue={item ? item.nom : ""}
-                            rules={{ required: true }}
-                            render={({ field }) => <TextField
-                                label="Nom"
-                                value={field.value}
-                                variant="filled"
-                                fullWidth
-                                {...field}
-                            />}
+                    <Controller
+                        name="nom"
+                        control={control}
+                        defaultValue={item ? item.nom : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Nom"
+                            value={field.value}
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="lien"
+                        control={control}
+                        defaultValue={item ? item.lien : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Lien YouCanBook.me"
+                            value={field.value}
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="description"
+                        control={control}
+                        defaultValue={item ? item.description : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Description"
+                            value={field.value}
+                            variant="filled"
+                            minRows={3}
+                            maxRows={Infinity}
+                            multiline
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="pastille"
+                        control={control}
+                        rules={{ required: false }}
+                        render={({ field }) => <TextField
+                            id='pastille'
+                            type='file'
+                            label="Pastille"
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
                         />
-                        <Controller
-                            name="description"
-                            control={control}
-                            defaultValue={item ? item.description : ""}
-                            rules={{ required: true }}
-                            render={({ field }) => <TextField
-                                label="Description"
-                                value={field.value}
-                                variant="filled"
-                                minRows={3}
-                                maxRows={Infinity}
-                                multiline
-                                fullWidth
-                                margin={'normal'}
-                                {...field}
-                            />}
-                        />
-                    </section>
+                        }
+                    />
+                    <div>
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/moments/${item.pastille}`} alt={item.pastille} />}
+                    </div>
                     <Link to={'/admin/moments'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>
                     </Link>

@@ -56,7 +56,6 @@ const EquipementForm = ({ edit, item }) => {
     } else {
         return (
             <>
-                {console.log('ITEM', item)}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Controller
                         name="nom"

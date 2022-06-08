@@ -21,7 +21,6 @@ const AdminMoments = () => {
     }, []);
 
     const itemDelete = (id) => {
-        console.log(id);
         axios.delete(`${process.env.REACT_APP_BACK_URL}/api/body/moment/${id}`, {
             headers: { Authorization: `Bearer ${user.token}` }
         })
