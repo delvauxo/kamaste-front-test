@@ -16,6 +16,9 @@ import AdminEquipementEdit from '../pages/admin/equipements/edit';
 import AdminServices from '../pages/admin/services';
 import AdminServiceCreate from '../pages/admin/services/create';
 import AdminServiceEdit from '../pages/admin/services/edit';
+// Temoignages.
+import AdminTemoignages from '../pages/admin/temoignages';
+import AdminTemoignageCreate from '../pages/admin/temoignages/create';
 // Login.
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
@@ -27,6 +30,7 @@ import MomentsPage from '../pages/moments';
 import EquipementsPage from '../pages/equipements';
 import ServicesPage from '../pages/services';
 import Error404 from '../pages/errors/404';
+import AdminTemoignageEdit from '../pages/admin/temoignages/edit';
 
 export const appRoute = [
     { path: '', element: <HomePage /> },
@@ -66,6 +70,14 @@ export const appRoute = [
                     { index: true, element: <AdminEquipements /> },
                     { path: 'nouveau', element: <AdminEquipementCreate /> },
                     { path: ':id', element: <AdminEquipementEdit /> }
+                ]
+            },
+            {
+                path: 'temoignages',
+                children: [
+                    { index: true, element: <AdminTemoignages /> },
+                    { path: 'nouveau', element: <AdminTemoignageCreate /> },
+                    { path: ':id', element: <AdminTemoignageEdit /> }
                 ]
             }
         ]

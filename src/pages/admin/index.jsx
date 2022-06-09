@@ -22,10 +22,7 @@ const AdminPage = () => {
                     <Link to={'services'}>Services</Link>
                 </li>
                 <li>
-                    <Link to={'reservations'}>Réservations</Link>
-                </li>
-                <li>
-                    <Link to={'members'}>Membres</Link>
+                    <Link to={'temoignages'}>Témoignages</Link>
                 </li>
             </ul>
         </>

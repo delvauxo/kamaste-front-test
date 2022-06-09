@@ -39,11 +39,8 @@ const HeaderAdmin = () => {
                         <Typography color='inherit' variant='h6' component={NavLink} to='/admin/services' sx={{ textDecoration: 'none' }}>
                             Services
                         </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/admin/reservations' sx={{ textDecoration: 'none' }}>
-                            Réservations
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/admin/membres' sx={{ textDecoration: 'none' }}>
-                            Membres
+                        <Typography color='inherit' variant='h6' component={NavLink} to='/admin/temoignages' sx={{ textDecoration: 'none' }}>
+                            Témoignages
                         </Typography>
                     </Box>
                     <Button color='inherit' component='div'>
