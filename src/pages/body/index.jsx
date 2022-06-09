@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import SimpleSlider from '../../components/slider/slider';
+import PastilleSlider from '../../components/slider/slider';
+import TemoignageSlider from '../../components/slider/slider-temoignage';
 
 
 const BodyPage = () => {
@@ -8,6 +9,7 @@ const BodyPage = () => {
     const [moments, setMoments] = useState([]);
     const [equipements, setEquipements] = useState([]);
     const [services, setServices] = useState([]);
+    const [temoignages, setTemoignages] = useState([]);
 
     useEffect(() => {
         // Equipements.
@@ -19,6 +21,9 @@ const BodyPage = () => {
         // Services.
         axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/service`)
             .then(({ data }) => { setServices(data.result.rows); });
+        // Temoignages.
+        axios.get(`${process.env.REACT_APP_BACK_URL}/api/body/temoignage`)
+            .then(({ data }) => { setTemoignages(data.result.rows); });
     }, []);
 
     // Equipements.
@@ -51,6 +56,16 @@ const BodyPage = () => {
         )
     );
 
+    // Temoignages.
+    const temoignageJSX = temoignages.map(
+        temoignage => (
+            <li key={temoignage.id}>
+                <div>{temoignage.client}</div>
+                <div>{temoignage.texte}</div>
+            </li>
+        )
+    );
+
     return (
         <>
             <h1>Espace Body</h1>
@@ -60,28 +75,25 @@ const BodyPage = () => {
             <ul>
                 {equipementsJSX}
             </ul>
-            <SimpleSlider items={equipements} type="equipements" />
+            <PastilleSlider items={equipements} type="equipements" />
 
             <h3>Moments</h3>
             <ul>
                 {momentsJSX}
             </ul>
-            <SimpleSlider items={moments} type="moments" />
+            <PastilleSlider items={moments} type="moments" />
 
             <h3>Services</h3>
             <ul>
                 {servicesJSX}
             </ul>
-            <SimpleSlider items={services} type="services" />
+            <PastilleSlider items={services} type="services" />
 
             <h3>Agenda</h3>
             {/* <iframe src="https://kamaste.youcanbook.me/?noframe=true&skipHeaderFooter=true" id="ycbmiframekamaste" frameborder="0" allowtransparency="true"></iframe> */}
             <h3>Témoignages</h3>
-            <ul>
-                <li>...</li>
-                <li>...</li>
-                <li>...</li>
-            </ul>
+            <TemoignageSlider items={temoignages} />
+
         </>
     );
 };

@@ -4,15 +4,15 @@ import sliderSettings from "./slider-settings";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const PastilleSlider = ({ items, type }) => {
+const TemoignageSlider = ({ items }) => {
 
     var settings = {
         autoplay: true,
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         responsive: sliderSettings
     };
 
@@ -21,14 +21,14 @@ const PastilleSlider = ({ items, type }) => {
             return item.lien ? (
                 <div key={item.id} className='slider-item'>
                     <a href={item.lien}>
-                        <h3>{item.nom}</h3>
-                        <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${type}/${item.pastille}`} alt={item.nom} />
+                        <h3>{item.client}</h3>
+                        <div>{item.texte}</div>
                     </a>
                 </div>
             ) : (
                 <div key={item.id} className='slider-item'>
-                    <h3>{item.nom}</h3>
-                    <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${type}/${item.pastille}`} alt={item.nom} />
+                    <h3>{item.client}</h3>
+                    <div>{item.texte}</div>
                 </div>
             );
         }
@@ -41,4 +41,4 @@ const PastilleSlider = ({ items, type }) => {
     );
 };
 
-export default PastilleSlider;
+export default TemoignageSlider;
