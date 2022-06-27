@@ -10,4 +10,10 @@
 @use './pages/body/body.module.scss';
 
 // Imports.
+@import "styles/variables";
 @import url('./components/slider/_slider.module.scss');
+
+// Root app styles.
+.front {
+    background-color: $primaryColor;
+}

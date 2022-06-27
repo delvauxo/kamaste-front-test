@@ -15,27 +15,27 @@ export const paths = [
     },
     {
         'path': '/body',
-        'className': 'body'
+        'className': 'front body'
     },
     {
         'path': '/body/about',
-        'className': 'propos'
+        'className': 'front body-propos'
     },
     {
         'path': '/body/moments',
-        'className': 'body-moments'
+        'className': 'front body-moments'
     },
     {
         'path': '/body/equipements',
-        'className': 'body-equipements'
+        'className': 'front body-equipements'
     },
     {
         'path': '/body/services',
-        'className': 'body-services'
+        'className': 'front body-services'
     },
     {
         'path': '/body/contact',
-        'className': 'body-contact'
+        'className': 'front body-contact'
     },
     {
         'path': '/mind',

@@ -87,8 +87,8 @@ const BodyPage = () => {
                 </div>
             </Container>
 
+            {/* YOUCANBOOK.ME */}
             {/* <iframe src="https://kamaste.youcanbook.me/?noframe=true&skipHeaderFooter=true" id="ycbmiframekamaste" frameborder="0" allowtransparency="true"></iframe> */}
-
 
             {/* TEMOIGNAGES COMPONENT */}
             <Container>
