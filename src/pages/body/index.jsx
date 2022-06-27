@@ -1,6 +1,7 @@
 import { Container } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Dicton from '../../components/dicton/dicton';
 import PastilleSlider from '../../components/slider/slider';
 import TemoignageSlider from '../../components/slider/slider-temoignage';
 
@@ -29,6 +30,7 @@ const BodyPage = () => {
 
     return (
         <>
+            {/* HEADER PAGE */}
             <Container>
                 <h1>Espace Body</h1>
                 <div className='rounded-bg-white'>
@@ -38,10 +40,11 @@ const BodyPage = () => {
                     </p>
                 </div>
                 <div className='rounded-bg-white'>
-                    <p>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
+                    <p className='font-chakra txt-md secondary-color'>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
                 </div>
             </Container>
 
+            {/* EQUIPEMENTS COMPONENT */}
             <Container>
                 <div className="component-title">
                     <h3>Equipements</h3>
@@ -51,12 +54,9 @@ const BodyPage = () => {
                 <div className="bg-image"></div>
                 <PastilleSlider items={equipements} name="equipements" />
             </div>
-            <Container>
-                <div className='rounded-bg-white'>
-                    <p className='font-brittany secondary-color txt-lg'>« Dicton Equipements... »</p>
-                </div>
-            </Container>
+            <Dicton container={true} dicton='« Dicton Équipements !!! »' />
 
+            {/* MOMENTS COMPONENT */}
             <Container>
                 <div className="component-title">
                     <h3>Moments</h3>
@@ -66,12 +66,9 @@ const BodyPage = () => {
                 <div className="bg-image"></div>
                 <PastilleSlider items={moments} name="moments" />
             </div>
-            <Container>
-                <div className='rounded-bg-white'>
-                    <p className='font-brittany secondary-color txt-lg'>« Dicton Moments... »</p>
-                </div>
-            </Container>
+            <Dicton container={true} dicton='« Dicton Moments !!! »' />
 
+            {/* SERVICES COMPONENT */}
             <Container>
                 <div className="component-title">
                     <h3>Services</h3>
@@ -81,18 +78,19 @@ const BodyPage = () => {
                 <div className="bg-image"></div>
                 <PastilleSlider items={services} name="services" />
             </div>
-            <Container>
-                <div className='rounded-bg-white'>
-                    <p className='font-brittany secondary-color txt-lg'>« Dicton Services... »</p>
-                </div>
-            </Container>
+            <Dicton container={true} dicton='« Dicton Services !!! »' />
 
+            {/* RESERVER */}
             <Container>
                 <div className="component-title">
                     <h3>Réserver</h3>
                 </div>
             </Container>
+
             {/* <iframe src="https://kamaste.youcanbook.me/?noframe=true&skipHeaderFooter=true" id="ycbmiframekamaste" frameborder="0" allowtransparency="true"></iframe> */}
+
+
+            {/* TEMOIGNAGES COMPONENT */}
             <Container>
                 <div className="component-title">
                     <h3>Témoignages</h3>
@@ -102,11 +100,7 @@ const BodyPage = () => {
                 <div className="bg-image"></div>
                 <TemoignageSlider items={temoignages} />
             </div>
-            <Container>
-                <div className='rounded-bg-white'>
-                    <p className='font-brittany secondary-color txt-lg'>« Dicton Témoignages... »</p>
-                </div>
-            </Container>
+            <Dicton container={true} dicton='« Dicton Témoignages !!! »' />
 
         </>
     );

@@ -5,3 +5,39 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'chakra_light';
+    src: url('../fonts/chakrapetch-light-webfont.woff2') format('woff2'),
+        url('../fonts/chakrapetch-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'chakra_regular';
+    src: url('../fonts/chakrapetch-regular-webfont.woff2') format('woff2'),
+        url('../fonts/chakrapetch-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'chakra_medium';
+    src: url('../fonts/chakrapetch-medium-webfont.woff2') format('woff2'),
+        url('../fonts/chakrapetch-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'chakra_bold';
+    src: url('../fonts/chakrapetch-bold-webfont.woff2') format('woff2'),
+        url('../fonts/chakrapetch-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
