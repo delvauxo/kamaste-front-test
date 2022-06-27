@@ -73,10 +73,16 @@
     margin-top: 1.5rem;
 }
 
-//// BACKGROUNDS.
-.rounded-bg-white {
-    padding: 25px 50px;
-    background-color: white;
-    border-radius: 15px;
-    margin-bottom: 25px;
+//// DISPLAYS.
+/// 
+.d-block {
+    display: block;
+}
+
+.d-inline {
+    display: inline;
+}
+
+.d-inline-b {
+    display: inline-block;
 }

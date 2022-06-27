@@ -4,7 +4,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../store/actions/user-action';
-import style from './header.module.scss';
+import style from './_header.module.scss';
 
 const HeaderAdmin = () => {
     const user = useSelector((state) => state.user);

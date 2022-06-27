@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../store/actions/user-action';
-import style from './header.module.scss';
+import style from './_header.module.scss';
 import classNames from 'classnames';
 
 const Header = () => {
@@ -11,10 +11,6 @@ const Header = () => {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const navLinks = document.querySelectorAll('header .MuiTypography-root');
-
-    console.log(navLinks);
 
     return (
         <header>

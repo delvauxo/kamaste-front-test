@@ -4,7 +4,10 @@
 // Generic classes.
 @use './styles/_generic.scss';
 // Containers.
-@use './containers/header/header.module.scss';
+@use './containers/header/header.module';
+@use './containers/footer/footer.module';
+// Components.
+@use './components/dicton/dicton.module';
 // Pages.
 @use './pages/home/home.module.scss';
 @use './pages/body/body.module.scss';

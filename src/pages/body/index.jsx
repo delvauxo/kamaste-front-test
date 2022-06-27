@@ -35,8 +35,8 @@ const BodyPage = () => {
                 <h1>Espace Body</h1>
                 <div className='rounded-bg-white'>
                     <p className='font-brittany secondary-color no-margin'>
-                        <div className='txt-center txt-lg'>« Fais de ta vie un rêve, et d'un rêve, une réalité. »</div>
-                        <div className='txt-right txt-md'>Antoine de Saint-Exupéry</div>
+                        <span className='txt-center txt-lg d-block'>« Fais de ta vie un rêve, et d'un rêve, une réalité. »</span>
+                        <span className='txt-right txt-md d-block'>Antoine de Saint-Exupéry</span>
                     </p>
                 </div>
                 <div className='rounded-bg-white'>
