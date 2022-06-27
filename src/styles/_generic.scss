@@ -1,6 +1,6 @@
 @import "variables";
 
-// FONTS.
+//// FONTS.
 .font-brittany {
     font-family: 'brittany';
 }
@@ -9,7 +9,7 @@
     font-family: 'chakra_regular';
 }
 
-// COLORS.
+//// COLORS.
 .primary-color {
     color: $primaryColor;
 }
@@ -54,12 +54,26 @@
     text-align: right;
 }
 
-// SPACES.
+//// SPACES.
+/// 
+// Margins.
 .no-margin {
     margin: 0;
 }
 
-// BACKGROUNDS.
+.mt-sm {
+    margin-top: 1rem;
+}
+
+.mt-md {
+    margin-top: 1.25rem;
+}
+
+.mt-lg {
+    margin-top: 1.5rem;
+}
+
+//// BACKGROUNDS.
 .rounded-bg-white {
     padding: 25px 50px;
     background-color: white;
