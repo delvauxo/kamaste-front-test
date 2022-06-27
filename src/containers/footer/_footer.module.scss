@@ -1,1 +1,33 @@
 @import "../../styles/variables";
+
+footer {
+    font-family: 'chakra_regular';
+    color: $secondaryColor;
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        background-color: $secondaryColor;
+        padding: 25px 0;
+
+        span {
+            color: #fff;
+            line-height: 48px;
+        }
+
+        img {
+            margin: 0 25px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        height: 48px;
+        transition: color .25s ease-in-out;
+
+        &:hover {
+            color: $tertiaryColor;
+        }
+    }
+}
