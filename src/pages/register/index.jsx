@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button, Stack, TextField } from '@mui/material';
+import { Button, Container, Stack, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import { Controller, useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
@@ -35,69 +35,68 @@ const RegisterPage = () => {
     };
 
     return (<>
-        <h1>Register</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <Stack gap='20px'>
-                <Controller
-                    render={({ field }) =>
-                        <TextField
-                            error={errors.pseudo}
-                            fullWidth
-                            label='Pseudo'
-                            {...field}
-                        />
-                    }
-                    name='pseudo'
-                    control={control}
-                    defaultValue=''
-
-                />
-                <Controller
-                    render={({ field }) =>
-                        <TextField
-                            error={errors.email}
-                            fullWidth
-                            label='Email'
-                            {...field}
-                        />
-                    }
-                    name='email'
-                    control={control}
-                    defaultValue=''
-
-                />
-                <Controller
-                    render={({ field }) =>
-                        <TextField
-                            error={errors.password}
-                            fullWidth
-                            label='Password'
-                            type='password'
-                            {...field} />
-                    }
-                    name='password'
-                    control={control}
-                    defaultValue=''
-                />
-                <Controller
-                    render={({ field }) =>
-                        <TextField
-                            error={errors.passwordConfirm}
-                            fullWidth
-                            label='Confirmation'
-                            type='password'
-                            {...field} />
-                    }
-                    name='passwordConfirm'
-                    control={control}
-                    defaultValue=''
-                />
-
-                <Box alignSelf='flex-start'>
-                    <Button variant='contained' type='submit' >Envoyer</Button>
-                </Box>
-            </Stack>
-        </form>
+        <Container>
+            <h1>Register</h1>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <Stack gap='20px'>
+                    <Controller
+                        render={({ field }) =>
+                            <TextField
+                                error={errors.pseudo}
+                                fullWidth
+                                label='Pseudo'
+                                {...field}
+                            />
+                        }
+                        name='pseudo'
+                        control={control}
+                        defaultValue=''
+                    />
+                    <Controller
+                        render={({ field }) =>
+                            <TextField
+                                error={errors.email}
+                                fullWidth
+                                label='Email'
+                                {...field}
+                            />
+                        }
+                        name='email'
+                        control={control}
+                        defaultValue=''
+                    />
+                    <Controller
+                        render={({ field }) =>
+                            <TextField
+                                error={errors.password}
+                                fullWidth
+                                label='Password'
+                                type='password'
+                                {...field} />
+                        }
+                        name='password'
+                        control={control}
+                        defaultValue=''
+                    />
+                    <Controller
+                        render={({ field }) =>
+                            <TextField
+                                error={errors.passwordConfirm}
+                                fullWidth
+                                label='Confirmation'
+                                type='password'
+                                {...field} />
+                        }
+                        name='passwordConfirm'
+                        control={control}
+                        defaultValue=''
+                    />
+                    <Box alignSelf='flex-start'>
+                        <Button variant='contained' type='submit' >Envoyer</Button>
+                    </Box>
+                </Stack>
+            </form>
+        </Container>
     </>);
 };
 

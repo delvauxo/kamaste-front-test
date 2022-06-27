@@ -1,4 +1,4 @@
-import { Box, Container, CssBaseline } from '@mui/material';
+import { Box, CssBaseline } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useRoutes } from 'react-router-dom';
@@ -27,6 +27,8 @@ function App() {
     }
   }, [url]);
 
+
+
   return (<>
     <CssBaseline />
     <Box display='flex' minHeight='100vh' flexDirection='column' className={`app ${classPage}`}>
@@ -34,9 +36,7 @@ function App() {
       {(url !== '/' && (user.isAdmin === null || user.isAdmin === false)) && <Header />}
       <Box flex={1}>
         <main>
-          <Container >
-            {routes}
-          </Container>
+          {routes}
         </main>
       </Box>
       <Footer />

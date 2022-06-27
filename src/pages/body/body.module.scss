@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+
+.app.body {
+    background-color: $primaryColor;
+
+    .component-title {
+        position: relative;
+
+        h3 {
+            position: relative;
+            color: $secondaryColor;
+            font-family: 'brittany';
+            font-size: 3rem;
+            font-weight: unset;
+            background-color: $primaryColor;
+            margin: 0;
+            display: inline-block;
+            padding-right: 25px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 2px;
+            background-color: $secondaryColor;
+        }
+    }
+
+
+}

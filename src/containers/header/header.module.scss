@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.adminLink {
+    text-decoration: none;
+    color: white;
+}
+
+.fontBtny {
+    font-family: 'brittany' !important;
+}
+
+.navLink {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    border-radius: 10px;
+    font-size: 1.5rem !important;
+    transition: all .20s ease-in-out;
+}
+
+header {
+
+    .MuiBox-root {
+
+        a {
+
+            &:hover {
+                color: $tertiaryColor  !important;
+                transition: all .20s ease-in-out;
+            }
+
+            &.active {
+                color: $primaryColor  !important;
+                background-color: $tertiaryColor  !important;
+                transition: all .20s ease-in-out;
+            }
+        }
+    }
+}

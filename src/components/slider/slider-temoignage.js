@@ -3,6 +3,7 @@ import sliderSettings from "./slider-settings";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Container } from '@mui/material';
 
 const TemoignageSlider = ({ items }) => {
 
@@ -35,9 +36,11 @@ const TemoignageSlider = ({ items }) => {
     );
 
     return (
-        <Slider {...settings}>
-            {itemsJSX}
-        </Slider>
+        <Container>
+            <Slider {...settings}>
+                {itemsJSX}
+            </Slider>
+        </Container>
     );
 };
 

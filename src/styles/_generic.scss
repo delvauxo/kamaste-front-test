@@ -1,0 +1,64 @@
+@import "variables";
+
+// FONTS.
+.font-brittany {
+    font-family: 'brittany';
+}
+
+// COLORS.
+.primary-color {
+    color: $primaryColor;
+}
+
+.secondary-color {
+    color: $secondaryColor;
+}
+
+.tertiary-color {
+    color: $tertiaryColor;
+}
+
+//// TEXT.
+/// 
+// Sizes.
+.txt-xs {
+    font-size: .75rem;
+}
+
+.txt-sm {
+    font-size: 1rem;
+}
+
+.txt-md {
+    font-size: 1.25rem;
+}
+
+.txt-lg {
+    font-size: 1.5rem;
+}
+
+// Alignments.
+.txt-left {
+    text-align: left;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+// SPACES.
+.no-margin {
+    margin: 0;
+}
+
+// BACKGROUNDS.
+.rounded-bg-white {
+    padding: 25px 50px;
+    background-color: white;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}

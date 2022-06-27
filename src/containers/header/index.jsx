@@ -3,13 +3,18 @@ import { Box } from '@mui/system';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogout } from '../../store/actions/user-action';
-import style from './header.module.css';
+import style from './header.module.scss';
+import classNames from 'classnames';
 
 const Header = () => {
 
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const navLinks = document.querySelectorAll('header .MuiTypography-root');
+
+    console.log(navLinks);
 
     return (
         <header>
@@ -19,27 +24,27 @@ const Header = () => {
                         <img src="/images/logo.png" alt="Kamaste logo" width={75} />
                     </Link>
                     <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center', gap: '20px', ml: 3 }}>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body' sx={{ textDecoration: 'none' }}>
-                            Body
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/about' sx={{ textDecoration: 'none' }}>
-                            Qui sommes-nous ?
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/moments' sx={{ textDecoration: 'none' }}>
-                            Moments
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/equipements' sx={{ textDecoration: 'none' }}>
-                            Équipements
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/services' sx={{ textDecoration: 'none' }}>
-                            Services
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/reserver' sx={{ textDecoration: 'none' }}>
-                            Réserver
-                        </Typography>
-                        <Typography color='inherit' variant='h6' component={NavLink} to='/body/contact' sx={{ textDecoration: 'none' }}>
-                            Contact
-                        </Typography>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body' end>
+                            <span>Body</span>
+                        </NavLink>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body/about'>
+                            <span>Qui sommes-nous ?</span>
+                        </NavLink>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body/moments'>
+                            <span>Moments</span>
+                        </NavLink>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body/equipements'>
+                            <span>Équipements</span>
+                        </NavLink>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body/services'>
+                            <span>Services</span>
+                        </NavLink>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body/reserver'>
+                            <span>Réserver</span>
+                        </NavLink>
+                        <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body/contact'>
+                            <span>Contact</span>
+                        </NavLink>
                     </Box>
                     {
                         !user.token ? (<>

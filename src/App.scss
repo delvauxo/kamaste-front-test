@@ -1,6 +1,13 @@
-// Uses.
-// @use './styles/_fonts.scss';
+//// Uses.
+// Fonts.
+@use './styles/_fonts.scss';
+// Generic classes.
+@use './styles/_generic.scss';
+// Containers.
+@use './containers/header/header.module.scss';
+// Pages.
 @use './pages/home/home.module.scss';
+@use './pages/body/body.module.scss';
 
 // Imports.
 @import url('./components/slider/_slider.module.scss');

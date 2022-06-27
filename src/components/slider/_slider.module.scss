@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .slider-item {
     text-align: center;
 }
@@ -6,4 +8,43 @@
     text-align: center;
     width: 50%;
     display: unset !important;
+}
+
+.slider-component {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0;
+
+    .bg-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-image: url('http://localhost:8080/components_bg/accueil_bg_02.jpg');
+        /* Add the blur effect */
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        /* Center and scale the image nicely */
+        background-position-y: 65%;
+        background-repeat: repeat-x;
+        background-size: 50%;
+    }
+}
+
+//// Slider.
+/// Overrides.
+.slick-slider {
+
+    .slick-arrow {
+
+        &::before {
+            font-size: 25px !important;
+        }
+    }
+
+    .slick-dots {
+
+        li button::before {
+            font-size: 8px !important;
+        }
+    }
 }
