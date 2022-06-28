@@ -47,7 +47,7 @@ const BodyPage = () => {
                     </p>
                 </div>
                 <div className='rounded-bg-white'>
-                    <p className='font-chakra txt-sm secondary-color'>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
+                    <p className='font-chakra txt-sm secondary-color no-margin'>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
                 </div>
             </Container>
 

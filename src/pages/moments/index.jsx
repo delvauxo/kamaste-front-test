@@ -1,5 +1,8 @@
+import { Container } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import Dicton from '../../components/dicton/dicton';
+import PastilleSlider from '../../components/slider/slider';
 
 const MomentsPage = () => {
 
@@ -23,9 +26,17 @@ const MomentsPage = () => {
 
     return (
         <>
-            <ul>
-                {momentsJSX}
-            </ul>
+            <div className="slider-component">
+                <div className="bg-image border-effect-white"></div>
+                <PastilleSlider items={moments} name="moments" />
+            </div>
+            <Dicton container={true} dicton='« Dicton Moments !!! »' />
+
+            <Container>
+                <ul>
+                    {momentsJSX}
+                </ul>
+            </Container>
         </>
     );
 };
