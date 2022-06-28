@@ -69,25 +69,30 @@
 
 .slider-component {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
     margin-top: 1.5rem;
-    margin-bottom: 0;
-    padding-bottom: 100px;
+    // margin-bottom: 0;
+    // padding-bottom: 50px;
 
     .bg-image {
-        width: 100%;
-        height: calc(100% - 52px);
         position: absolute;
-        background-image: url('http://localhost:8080/components_bg/flower.jpg');
-        /* Add the blur effect */
-        filter: blur(0px);
-        -webkit-filter: blur(0px);
-        /* Center and scale the image nicely */
-        background-position-y: 15%;
-        background-position-x: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        margin-top: 1px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 15%;
+        // width: 100%;
+        // height: calc(100% - 52px);
+        // position: absolute;
+        // background-image: url('http://localhost:8080/components_bg/flower.jpg');
+        // /* Add the blur effect */
+        // filter: blur(0px);
+        // -webkit-filter: blur(0px);
+        // /* Center and scale the image nicely */
+        // background-position-y: 15%;
+        // background-position-x: center;
+        // background-repeat: no-repeat;
+        // background-size: cover;
+        // margin-top: 1px;
     }
 
     .bg {
@@ -105,7 +110,10 @@
 //// Slider.
 /// Overrides.
 .slick-slider {
-    margin-top: 50px;
+
+    .slick-list {
+        padding: 1rem 0;
+    }
 
     .slick-arrow {
 
@@ -115,6 +123,9 @@
     }
 
     .slick-dots {
+        position: relative;
+        bottom: 0;
+        padding-bottom: 1rem;
 
         li button::before {
             font-size: 10px !important;

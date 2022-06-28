@@ -58,7 +58,8 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image border-effect-white"></div>
+                <img className="bg-image border-effect-white" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
+                {/* <div className="bg-image border-effect-white"></div> */}
                 <PastilleSlider items={equipements} name="equipements" />
             </div>
             <Dicton container={true} dicton='« Dicton Équipements !!! »' />
@@ -70,7 +71,8 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image border-effect-white"></div>
+                {/* <div className="bg-image border-effect-white"></div> */}
+                <img className="bg-image border-effect-white" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
                 <PastilleSlider items={moments} name="moments" />
             </div>
             <Dicton container={true} dicton='« Dicton Moments !!! »' />
@@ -82,7 +84,8 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image border-effect-white"></div>
+                {/* <div className="bg-image border-effect-white"></div> */}
+                <img className="bg-image border-effect-white" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
                 <PastilleSlider items={services} name="services" />
             </div>
             <Dicton container={true} dicton='« Dicton Services !!! »' />
