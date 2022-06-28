@@ -36,7 +36,7 @@ const BodyPage = () => {
                 <div className='rounded-bg-white'>
                     <p className='font-brittany secondary-color no-margin'>
                         <span className='txt-center txt-xl d-block'>« Fais de ta vie un rêve, et d'un rêve, une réalité. »</span>
-                        <span className='txt-right txt-md d-block'>Antoine de Saint-Exupéry</span>
+                        <span className='txt-right txt-md d-block'>― Antoine de Saint-Exupéry</span>
                     </p>
                 </div>
                 <div className='rounded-bg-white'>
