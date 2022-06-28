@@ -22,6 +22,34 @@
                 1px 1px 0 darken($secondaryColor, 25%);
         }
     }
+
+    #testi-text {
+        position: relative;
+        max-width: 65%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+
+        &::before {
+            content: 'ʻʻ';
+            transform: translate(-150%, -32%);
+            position: absolute;
+            line-height: 1;
+            font-size: 8rem;
+            letter-spacing: -1rem;
+            color: darken($secondaryColor, 15%);
+        }
+
+        &::after {
+            content: 'ʼʼ';
+            transform: translate(25%, 5%);
+            position: absolute;
+            line-height: 1;
+            font-size: 8rem;
+            letter-spacing: -1rem;
+            color: darken($secondaryColor, 15%);
+            z-index: 5;
+        }
+    }
 }
 
 .pastille {

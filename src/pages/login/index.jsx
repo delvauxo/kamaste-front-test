@@ -22,7 +22,7 @@ const LoginPage = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(userClearError);
-    }, []);
+    });
 
     const { control, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {

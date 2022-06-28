@@ -23,13 +23,13 @@ const TemoignageSlider = ({ items }) => {
                 <div key={item.id} className='slider-item'>
                     <a href={item.lien}>
                         <h3 className='font-brittany primary-color txt-xxl'>{item.client}</h3>
-                        <div className='font-chakra primary-color txt-md mb-lg'>{item.texte}</div>
+                        <div id='testi-text' className='font-chakra primary-color txt-md mb-lg'>{item.texte}</div>
                     </a>
                 </div>
             ) : (
                 <div key={item.id} className='slider-item'>
                     <h3 className='font-brittany primary-color txt-xxl'>{item.client}</h3>
-                    <div className='font-chakra primary-color txt-md mb-lg'>{item.texte}</div>
+                    <div id='testi-text' className='font-chakra primary-color txt-md mb-lg'>{item.texte}</div>
                 </div>
             );
         }
