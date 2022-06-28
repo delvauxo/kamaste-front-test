@@ -17,7 +17,7 @@ const Header = () => {
             <AppBar position='static' sx={{ bgcolor: "#657ead" }}>
                 <Toolbar sx={{ minHeight: 36, height: 100 }}>
                     <Link to={'/'}>
-                        <img src="/images/logo.png" alt="Kamaste logo" width={75} />
+                        <img src="/images/logo_k.png" alt="Kamaste logo" width={75} />
                     </Link>
                     <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center', gap: '20px', ml: 3 }}>
                         <NavLink className={classNames(style.fontBtny, style.navLink)} to='/body' end>
