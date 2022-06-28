@@ -35,12 +35,12 @@ const BodyPage = () => {
                 <h1>Espace Body</h1>
                 <div className='rounded-bg-white'>
                     <p className='font-brittany secondary-color no-margin'>
-                        <span className='txt-center txt-lg d-block'>« Fais de ta vie un rêve, et d'un rêve, une réalité. »</span>
+                        <span className='txt-center txt-xl d-block'>« Fais de ta vie un rêve, et d'un rêve, une réalité. »</span>
                         <span className='txt-right txt-md d-block'>Antoine de Saint-Exupéry</span>
                     </p>
                 </div>
                 <div className='rounded-bg-white'>
-                    <p className='font-chakra txt-md secondary-color'>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
+                    <p className='font-chakra txt-sm secondary-color'>Kamaste est un espace de bien-être pour le corps et l’esprit où nous saluons le plaisir.</p>
                 </div>
             </Container>
 
@@ -97,7 +97,7 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image"></div>
+                <div className="bg border-effect-blue"></div>
                 <TemoignageSlider items={temoignages} />
             </div>
             <Dicton container={true} dicton='« Dicton Témoignages !!! »' />

@@ -1,0 +1,6 @@
+@import "../styles/variables";
+
+.border-effect-blue {
+    border: 1px solid lighten($secondaryColor, 10%);
+    outline: 1px solid darken($secondaryColor, 10%);
+}

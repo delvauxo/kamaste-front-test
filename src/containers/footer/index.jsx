@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 const Footer = () => {
     return (
         <Box component='footer' textAlign='center'>
-            <div className='banner'>
+            <div className='banner border-effect-blue'>
                 <a href="https://www.facebook.com/Kamaste.Wellness.body.mind" target="_blank" rel="noopener noreferrer">
                     <img src="/images/icon_facebook.png" alt="Facebook logo" />
                 </a>

@@ -3,6 +3,7 @@
 @use './styles/_fonts.scss';
 // Generic classes.
 @use './styles/_generic.scss';
+@use './styles/utilities';
 // Containers.
 @use './containers/header/header.module';
 @use './containers/footer/footer.module';
