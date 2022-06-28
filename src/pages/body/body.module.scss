@@ -2,6 +2,36 @@
 
 .app.body {
 
+    #body-header {
+        background: $secondaryColor;
+        // background: linear-gradient(0deg, rgba(237, 233, 224, 1) 0%, rgba(101, 126, 173, 1) 100%);
+        text-align: center;
+
+        .logo-wrapper {
+            position: relative;
+            width: 250px;
+            margin: 0 auto;
+
+            h1 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -100%);
+                font-size: 50px;
+                font-weight: normal;
+            }
+
+            &::after {
+                position: absolute;
+                top: -50px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background-color: #ff00;
+            }
+        }
+    }
+
     .component-title {
         position: relative;
         text-align: center;
@@ -69,6 +99,26 @@
             width: 100%;
             height: 2px;
             background-color: darken($primaryColor, 15%);
+        }
+    }
+
+    #book-btn {
+        display: flex;
+        justify-content: center;
+
+        a {
+            color: $primaryColor;
+            background-color: $secondaryColor;
+            border-radius: 10px;
+            text-decoration: none;
+            font-family: 'chakra_regular';
+            font-size: 1.5rem;
+            padding: 15px 25px;
+            transition: color .25s ease-in-out;
+
+            &:hover {
+                color: $tertiaryColor;
+            }
         }
     }
 

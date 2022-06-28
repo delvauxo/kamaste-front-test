@@ -31,9 +31,16 @@ const BodyPage = () => {
     return (
         <>
             {/* HEADER PAGE */}
+            <div id='body-header' className='border-effect-blue-bt'>
+                <Container>
+                    <div className='logo-wrapper'>
+                        <h1 className='font-brittany tertiary-color'>Kamaste</h1>
+                        <img src="/images/logo_circle_transp.png" width='250' alt="Kamaste logo" />
+                    </div>
+                </Container>
+            </div>
             <Container>
-                <h1>Espace Body</h1>
-                <div className='rounded-bg-white'>
+                <div className='rounded-bg-white mt-lg'>
                     <p className='font-brittany secondary-color no-margin'>
                         <span className='txt-center txt-xl d-block'>« Fais de ta vie un rêve, et d'un rêve, une réalité. »</span>
                         <span className='txt-right txt-md d-block'>― Antoine de Saint-Exupéry</span>
@@ -51,7 +58,7 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image"></div>
+                <div className="bg-image border-effect-white"></div>
                 <PastilleSlider items={equipements} name="equipements" />
             </div>
             <Dicton container={true} dicton='« Dicton Équipements !!! »' />
@@ -63,7 +70,7 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image"></div>
+                <div className="bg-image border-effect-white"></div>
                 <PastilleSlider items={moments} name="moments" />
             </div>
             <Dicton container={true} dicton='« Dicton Moments !!! »' />
@@ -75,7 +82,7 @@ const BodyPage = () => {
                 </div>
             </Container>
             <div className="slider-component">
-                <div className="bg-image"></div>
+                <div className="bg-image border-effect-white"></div>
                 <PastilleSlider items={services} name="services" />
             </div>
             <Dicton container={true} dicton='« Dicton Services !!! »' />
@@ -84,6 +91,9 @@ const BodyPage = () => {
             <Container>
                 <div className="component-title">
                     <h3>Réserver</h3>
+                </div>
+                <div id='book-btn' className='mt-lg'>
+                    <a className='border-effect-blue' href='https://kamaste.youcanbook.me/' target='_blank' rel="noopener noreferrer">Réserver</a>
                 </div>
             </Container>
 
