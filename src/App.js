@@ -39,7 +39,7 @@ function App() {
           {routes}
         </main>
       </Box>
-      <Footer />
+      {!user.isAdmin && <Footer />}
     </Box>
   </>);
 }

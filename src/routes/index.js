@@ -31,6 +31,7 @@ import EquipementsPage from '../pages/equipements';
 import ServicesPage from '../pages/services';
 import Error404 from '../pages/errors/404';
 import AdminTemoignageEdit from '../pages/admin/temoignages/edit';
+import { Container } from '@mui/material';
 
 export const appRoute = [
     { path: '', element: <HomePage /> },
@@ -39,45 +40,45 @@ export const appRoute = [
     {
         path: 'admin',
         children: [
-            { path: '', element: <AdminPage /> },
+            { path: '', element: <Container><AdminPage /></Container> },
             {
                 path: 'moments',
                 children: [
-                    { index: true, element: <AdminMoments /> },
-                    { path: 'nouveau', element: <AdminMomentCreate /> },
-                    { path: ':id', element: <AdminMomentEdit /> }
+                    { index: true, element: <Container><AdminMoments /></Container> },
+                    { path: 'nouveau', element: <Container><AdminMomentCreate /></Container> },
+                    { path: ':id', element: <Container><AdminMomentEdit /></Container> }
                 ]
             },
             {
                 path: 'espaces',
                 children: [
-                    { index: true, element: <AdminEspaces /> },
-                    { path: 'nouveau', element: <AdminEspaceCreate /> },
-                    { path: ':id', element: <AdminEspaceEdit /> }
+                    { index: true, element: <Container><AdminEspaces /></Container> },
+                    { path: 'nouveau', element: <Container><AdminEspaceCreate /></Container> },
+                    { path: ':id', element: <Container><AdminEspaceEdit /></Container> }
                 ]
             },
             {
                 path: 'services',
                 children: [
-                    { index: true, element: <AdminServices /> },
-                    { path: 'nouveau', element: <AdminServiceCreate /> },
-                    { path: ':id', element: <AdminServiceEdit /> }
+                    { index: true, element: <Container><AdminServices /></Container> },
+                    { path: 'nouveau', element: <Container><AdminServiceCreate /></Container> },
+                    { path: ':id', element: <Container><AdminServiceEdit /></Container> }
                 ]
             },
             {
                 path: 'equipements',
                 children: [
-                    { index: true, element: <AdminEquipements /> },
-                    { path: 'nouveau', element: <AdminEquipementCreate /> },
-                    { path: ':id', element: <AdminEquipementEdit /> }
+                    { index: true, element: <Container><AdminEquipements /></Container> },
+                    { path: 'nouveau', element: <Container><AdminEquipementCreate /></Container> },
+                    { path: ':id', element: <Container><AdminEquipementEdit /></Container> }
                 ]
             },
             {
                 path: 'temoignages',
                 children: [
-                    { index: true, element: <AdminTemoignages /> },
-                    { path: 'nouveau', element: <AdminTemoignageCreate /> },
-                    { path: ':id', element: <AdminTemoignageEdit /> }
+                    { index: true, element: <Container><AdminTemoignages /></Container> },
+                    { path: 'nouveau', element: <Container><AdminTemoignageCreate /></Container> },
+                    { path: ':id', element: <Container><AdminTemoignageEdit /></Container> }
                 ]
             }
         ]
