@@ -26,8 +26,8 @@ const MomentsPage = () => {
 
     return (
         <>
-            <div className="slider-component">
-                <img className="bg-image border-effect-white" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
+            <div className="slider-component border-effect-white-bt no-margin">
+                <img className="bg-image" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
                 <PastilleSlider items={moments} name="moments" />
             </div>
             <Dicton container={true} dicton='« Dicton Moments !!! »' />

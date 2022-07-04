@@ -69,10 +69,8 @@
 
 .slider-component {
     position: relative;
-    // overflow: hidden;
-    margin-top: 1.5rem;
-    // margin-bottom: 0;
-    // padding-bottom: 50px;
+    margin-top: 1.25rem;
+    background-color: $secondaryColor;
 
     .bg-image {
         position: absolute;
@@ -80,30 +78,15 @@
         height: 100%;
         object-fit: cover;
         object-position: 50% 15%;
-        // width: 100%;
-        // height: calc(100% - 52px);
-        // position: absolute;
-        // background-image: url('http://localhost:8080/components_bg/flower.jpg');
-        // /* Add the blur effect */
-        // filter: blur(0px);
-        // -webkit-filter: blur(0px);
-        // /* Center and scale the image nicely */
-        // background-position-y: 15%;
-        // background-position-x: center;
-        // background-repeat: no-repeat;
-        // background-size: cover;
-        // margin-top: 1px;
     }
 
     .bg {
-        width: 100%;
-        height: calc(100% - 52px);
         position: absolute;
-        background-color: $secondaryColor;
-        background-image: url('../../../public/images/logo_circle_transp.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: auto;
+        width: max-content;
+        height: 100%;
+        margin: 0 auto;
+        object-fit: cover;
+        object-position: 50% 50%;
     }
 }
 
