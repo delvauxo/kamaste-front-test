@@ -71,7 +71,7 @@ const BodyPage = () => {
             </Container>
             <div className="slider-component border-effect-white">
                 <img className="bg-image" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
-                <PastilleSlider items={moments} name="moments" />
+                <PastilleSlider items={moments} name="moments" body={true} />
             </div>
             <Dicton container={true} dicton='« Dicton Moments !!! »' />
 

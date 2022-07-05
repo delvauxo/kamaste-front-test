@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container } from '@mui/material';
 
-const PastilleSlider = ({ items, name, title }) => {
+const PastilleSlider = ({ items, name, title, body }) => {
 
     var settings = {
         autoplay: true,
@@ -19,17 +19,17 @@ const PastilleSlider = ({ items, name, title }) => {
 
     const itemsJSX = items.map(
         item => {
-            return item.lien ? (
-                <div key={item.id} className='slider-item'>
-                    <a href={item.lien}>
-                        {title && <h3>{item.nom}</h3>}
-                        <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${name}/${item.pastille}`} alt={item.nom} />
-                    </a>
-                </div>
-            ) : (
+            return body === false ? (
                 <div key={item.id} className='slider-item'>
                     {title && <h3>{item.nom}</h3>}
                     <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${name}/${item.pastille}`} alt={item.nom} />
+                </div>
+            ) : (
+                <div key={item.id} className='slider-item'>
+                    <a href="/body/moments">
+                        {title && <h3>{item.nom}</h3>}
+                        <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${name}/${item.pastille}`} alt={item.nom} />
+                    </a>
                 </div>
             );
         }

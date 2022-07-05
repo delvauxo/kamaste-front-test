@@ -16,6 +16,9 @@ const MomentForm = ({ edit, item }) => {
         const fd = new FormData();
         fd.append("nom", data.nom);
         fd.append("lien", data.lien);
+        fd.append("people", data.people);
+        fd.append("hours", data.hours);
+        fd.append("price", data.price);
         fd.append("description", data.description);
         // Get file DOM element.
         const pastille = document.getElementById("pastille");
@@ -91,6 +94,48 @@ const MomentForm = ({ edit, item }) => {
                         rules={{ required: true }}
                         render={({ field }) => <TextField
                             label="Lien YouCanBook.me"
+                            value={field.value}
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="people"
+                        control={control}
+                        defaultValue={item ? item.people : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Nombre de personnes"
+                            value={field.value}
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="hours"
+                        control={control}
+                        defaultValue={item ? item.hours : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Durée"
+                            value={field.value}
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="price"
+                        control={control}
+                        defaultValue={item ? item.price : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Prix"
                             value={field.value}
                             variant="filled"
                             fullWidth

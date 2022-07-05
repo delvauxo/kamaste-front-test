@@ -17,9 +17,20 @@ const MomentsPage = () => {
 
     const momentsJSX = moments.map(
         moment => (
-            <li key={moment.id}>
-                <div>{moment.nom}</div>
-                <div>{moment.description}</div>
+            <li key={moment.id} className='rounded-bg-white'>
+                <div className='desc-text font-chakra'>
+                    <div className='txt-xxl tertiary-color'>{moment.nom}</div>
+                    <div className='secondary-color mt-sm'>Nombre de personnes: {moment.people}</div>
+                    <div className='secondary-color'>Durée: {moment.hours} heures</div>
+                    <div className='secondary-color mt-sm'>{moment.description}</div>
+                    <div className='secondary-color mt-sm'>Prix: {moment.price}€</div>
+                    <div className='book-btn mt-lg'>
+                        <a className='border-effect-blue' href={moment.lien} target='_blank' rel="noopener noreferrer">Réserver</a>
+                    </div>
+                </div>
+                <div className='desc-image'>
+                    <img src={`${process.env.REACT_APP_BACK_URL}/moments/images/` + moment.image} alt={moment.nom} />
+                </div>
             </li>
         )
     );
@@ -27,13 +38,13 @@ const MomentsPage = () => {
     return (
         <>
             <div className="slider-component border-effect-white-bt no-margin">
-                <img className="bg-image" src="http://localhost:8080/components_bg/flower.jpg" alt="background" />
-                <PastilleSlider items={moments} name="moments" />
+                <img className="bg-image" src={`${process.env.REACT_APP_BACK_URL}/components_bg/flower.jpg`} alt="background" />
+                <PastilleSlider items={moments} name="moments" body={false} />
             </div>
             <Dicton container={true} dicton='« Dicton Moments !!! »' />
 
             <Container>
-                <ul>
+                <ul className='component-list no-margin'>
                     {momentsJSX}
                 </ul>
             </Container>
