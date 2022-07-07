@@ -18,20 +18,33 @@ const ServiceForm = ({ edit, item }) => {
         fd.append("lien", data.lien);
         fd.append("description", data.description);
         // Get file DOM element.
-        const file = document.getElementById("pastille");
+        const pastille = document.getElementById("pastille");
+        const image = document.getElementById("image");
         // If new file, send file to FormData (Multer will use it).
-        if (file.files[0]) {
-            fd.append("pastille", file.files[0]);
+        if (pastille.files[0]) {
+            fd.append("pastille", pastille.files[0]);
+        }
+        if (image.files[0]) {
+            fd.append("image", image.files[0]);
         }
 
         if (edit) {
             //// PUT.
-            if (file.files[0]) {
+            // File - Pastille.
+            if (pastille.files[0]) {
                 // If new file.
                 fd.append("fileToDelete", item.pastille);
             } else {
                 // If no new file.
                 fd.append("fileToKeep", item.pastille);
+            }
+            // File - Image.
+            if (image.files[0]) {
+                // If new file.
+                fd.append("fileImageToDelete", item.image);
+            } else {
+                // If no new file.
+                fd.append("fileImageToKeep", item.image);
             }
             // Request.
             await axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/service/${item.id}`, fd, {
@@ -118,8 +131,24 @@ const ServiceForm = ({ edit, item }) => {
                         />
                         }
                     />
+                    <Controller
+                        name="image"
+                        control={control}
+                        rules={{ required: false }}
+                        render={({ field }) => <TextField
+                            id='image'
+                            type='file'
+                            label="Description image"
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />
+                        }
+                    />
                     <div>
-                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/services/${item.pastille}`} alt={item.pastille} />}
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/services/${item.pastille}`} alt='pastille' />}
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/services/images/${item.image}`} alt='description' />}
                     </div>
                     <Link to={'/admin/services'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>

@@ -29,6 +29,7 @@ const EquipementForm = ({ edit, item }) => {
 
         if (edit) {
             //// PUT.
+            // File - Pastille.
             if (pastille.files[0]) {
                 // If new file.
                 fd.append("fileToDelete", item.pastille);
@@ -36,6 +37,7 @@ const EquipementForm = ({ edit, item }) => {
                 // If no new file.
                 fd.append("fileToKeep", item.pastille);
             }
+            // File - Image.
             if (image.files[0]) {
                 // If new file.
                 fd.append("fileImageToDelete", item.image);
@@ -130,8 +132,8 @@ const EquipementForm = ({ edit, item }) => {
                         }
                     />
                     <div>
-                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/equipements/${item.pastille}`} alt={item.pastille} />}
-                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/equipements/images/${item.image}`} alt={item.image} />}
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/equipements/${item.pastille}`} alt='pastille' />}
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/equipements/images/${item.image}`} alt='description' />}
                     </div>
                     <Link to={'/admin/equipements'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>
