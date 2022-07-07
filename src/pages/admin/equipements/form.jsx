@@ -17,20 +17,31 @@ const EquipementForm = ({ edit, item }) => {
         fd.append("nom", data.nom);
         fd.append("description", data.description);
         // Get file DOM element.
-        const file = document.getElementById("pastille");
+        const pastille = document.getElementById("pastille");
+        const image = document.getElementById("image");
         // If new file, send file to FormData (Multer will use it).
-        if (file.files[0]) {
-            fd.append("pastille", file.files[0]);
+        if (pastille.files[0]) {
+            fd.append("pastille", pastille.files[0]);
+        }
+        if (image.files[0]) {
+            fd.append("image", image.files[0]);
         }
 
         if (edit) {
             //// PUT.
-            if (file.files[0]) {
+            if (pastille.files[0]) {
                 // If new file.
                 fd.append("fileToDelete", item.pastille);
             } else {
                 // If no new file.
                 fd.append("fileToKeep", item.pastille);
+            }
+            if (image.files[0]) {
+                // If new file.
+                fd.append("fileImageToDelete", item.image);
+            } else {
+                // If no new file.
+                fd.append("fileImageToKeep", item.image);
             }
             // Request.
             await axios.put(`${process.env.REACT_APP_BACK_URL}/api/body/equipement/${item.id}`, fd, {
@@ -66,6 +77,7 @@ const EquipementForm = ({ edit, item }) => {
                             label="Nom"
                             variant="filled"
                             fullWidth
+                            margin={'normal'}
                             {...field}
                         />
                         }
@@ -97,12 +109,29 @@ const EquipementForm = ({ edit, item }) => {
                             label="Pastille"
                             variant="filled"
                             fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />
+                        }
+                    />
+                    <Controller
+                        name="image"
+                        control={control}
+                        rules={{ required: false }}
+                        render={({ field }) => <TextField
+                            id='image'
+                            type='file'
+                            label="Image description"
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
                             {...field}
                         />
                         }
                     />
                     <div>
                         {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/pastilles/equipements/${item.pastille}`} alt={item.pastille} />}
+                        {item && <img width='200' src={`${process.env.REACT_APP_BACK_URL}/equipements/images/${item.image}`} alt={item.image} />}
                     </div>
                     <Link to={'/admin/equipements'}>
                         <Button sx={{ mt: 2, textTransform: 'none' }} variant="contained" color='error'>Annuler</Button>
