@@ -15,6 +15,7 @@ const ServiceForm = ({ edit, item }) => {
         // Instanciate new FormData for multipart form (file upload).
         const fd = new FormData();
         fd.append("nom", data.nom);
+        fd.append("price", data.price);
         fd.append("lien", data.lien);
         fd.append("description", data.description);
         // Get file DOM element.
@@ -78,6 +79,20 @@ const ServiceForm = ({ edit, item }) => {
                         rules={{ required: true }}
                         render={({ field }) => <TextField
                             label="Nom"
+                            value={field.value}
+                            variant="filled"
+                            fullWidth
+                            margin={'normal'}
+                            {...field}
+                        />}
+                    />
+                    <Controller
+                        name="price"
+                        control={control}
+                        defaultValue={item ? item.price : ""}
+                        rules={{ required: true }}
+                        render={({ field }) => <TextField
+                            label="Prix (0 = Gratuit)"
                             value={field.value}
                             variant="filled"
                             fullWidth

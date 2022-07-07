@@ -21,6 +21,14 @@ const ServicesPage = () => {
                 <div className='desc-text font-chakra'>
                     <div className='txt-xxl tertiary-color'>{service.nom}</div>
                     <div className='secondary-color mt-sm'>{service.description}</div>
+                    {service.nom !== 'Snacking' && <div className='secondary-color mt-sm'>{service.price > 0 ? service.price + '€' : 'Gratuit'}</div>}
+
+
+                    {service.nom === 'Snacking' &&
+                        <div className='book-btn mt-lg'>
+                            <a className='border-effect-blue' href='https://www.kamaste.be/menu.pdf' target='_blank' rel="noopener noreferrer">Menu</a>
+                        </div>
+                    }
                 </div>
                 <div className='desc-image'>
                     <img src={`${process.env.REACT_APP_BACK_URL}/services/images/` + service.image} alt={service.nom} />
