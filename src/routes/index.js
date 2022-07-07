@@ -19,18 +19,19 @@ import AdminServiceEdit from '../pages/admin/services/edit';
 // Temoignages.
 import AdminTemoignages from '../pages/admin/temoignages';
 import AdminTemoignageCreate from '../pages/admin/temoignages/create';
+import AdminTemoignageEdit from '../pages/admin/temoignages/edit';
 // Login.
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
 // Public.
 import HomePage from '../pages/home';
 import BodyPage from '../pages/body';
-import AboutPage from '../pages/about';
 import MomentsPage from '../pages/moments';
 import EquipementsPage from '../pages/equipements';
 import ServicesPage from '../pages/services';
+import ReserverPage from '../pages/reserver';
+import AboutPage from '../pages/about';
 import Error404 from '../pages/errors/404';
-import AdminTemoignageEdit from '../pages/admin/temoignages/edit';
 import { Container } from '@mui/material';
 
 export const appRoute = [
@@ -90,6 +91,7 @@ export const appRoute = [
             { path: 'moments', element: <MomentsPage /> },
             { path: 'equipements', element: <EquipementsPage /> },
             { path: 'services', element: <ServicesPage /> },
+            { path: 'reserver', element: <ReserverPage /> },
             { path: 'about', element: <AboutPage /> },
         ]
     },
