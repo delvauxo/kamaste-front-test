@@ -26,7 +26,7 @@ const PastilleSlider = ({ items, name, title, body }) => {
                 </div>
             ) : (
                 <div key={item.id} className='slider-item'>
-                    <a href="/body/moments">
+                    <a href={`/body/${name}`}>
                         {title && <h3>{item.nom}</h3>}
                         <img className='pastille' src={`${process.env.REACT_APP_BACK_URL}/pastilles/${name}/${item.pastille}`} alt={item.nom} />
                     </a>
