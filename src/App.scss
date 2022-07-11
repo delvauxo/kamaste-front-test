@@ -2,7 +2,8 @@
 // Fonts.
 @use './styles/_fonts.scss';
 // Generic classes.
-@use './styles/_generic.scss';
+@use './styles/generic-classes';
+@use './styles/generic-styles';
 @use './styles/utilities';
 // Containers.
 @use './containers/header/header.module';
@@ -13,8 +14,9 @@
 @use './pages/home/home.module.scss';
 @use './pages/body/body.module.scss';
 @use './pages/moments/moments.module';
-@use './pages/newsletter/newsletter.module';
+@use './pages/about/about.module';
 @use './pages/contact/contact.module';
+@use './pages/newsletter/newsletter.module';
 
 // Imports.
 @import "styles/variables";
