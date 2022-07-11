@@ -1,4 +1,4 @@
-// Admin.
+//// Admin.
 import AdminPage from '../pages/admin';
 // Espaces.
 import AdminEspaces from '../pages/admin/espaces';
@@ -23,7 +23,7 @@ import AdminTemoignageEdit from '../pages/admin/temoignages/edit';
 // Login.
 import LoginPage from '../pages/login';
 import RegisterPage from '../pages/register';
-// Public.
+//// Public.
 import HomePage from '../pages/home';
 import BodyPage from '../pages/body';
 import MomentsPage from '../pages/moments';
@@ -31,6 +31,8 @@ import EquipementsPage from '../pages/equipements';
 import ServicesPage from '../pages/services';
 import ReserverPage from '../pages/reserver';
 import AboutPage from '../pages/about';
+import ContactPage from '../pages/contact';
+import NewsLetterPage from '../pages/newsletter';
 import Error404 from '../pages/errors/404';
 import { Container } from '@mui/material';
 
@@ -92,6 +94,8 @@ export const appRoute = [
             { path: 'equipements', element: <EquipementsPage /> },
             { path: 'services', element: <ServicesPage /> },
             { path: 'reserver', element: <ReserverPage /> },
+            { path: 'contact', element: <ContactPage /> },
+            { path: 'newsletter', element: <NewsLetterPage /> },
             { path: 'about', element: <AboutPage /> },
         ]
     },

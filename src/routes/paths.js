@@ -38,6 +38,10 @@ export const paths = [
         'className': 'front body-contact'
     },
     {
+        'path': '/body/newsletter',
+        'className': 'front body-newsletter'
+    },
+    {
         'path': '/mind',
         'className': 'mind'
     },

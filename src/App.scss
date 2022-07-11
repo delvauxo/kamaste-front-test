@@ -13,6 +13,8 @@
 @use './pages/home/home.module.scss';
 @use './pages/body/body.module.scss';
 @use './pages/moments/moments.module';
+@use './pages/newsletter/newsletter.module';
+@use './pages/contact/contact.module';
 
 // Imports.
 @import "styles/variables";
