@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.body-contact {
+
+
+    button {
+        color: $primaryColor;
+        background-color: $secondaryColor;
+        border-radius: 10px;
+        text-decoration: none;
+        font-family: 'chakra_regular';
+        font-size: 1.25rem !important;
+        padding: 10px 20px !important;
+        transition: color .25s ease-in-out;
+        text-transform: none;
+
+        &:hover {
+            color: $tertiaryColor;
+            background-color: $secondaryColor;
+        }
+    }
+}

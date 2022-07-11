@@ -1,8 +1,18 @@
+import { Container } from '@mui/material';
+import ContactForm from './form';
+
 const ContactPage = () => {
 
     return (
         <>
-            Contact
+            <Container>
+                <div className="component-title">
+                    <h3>Contactez - nous</h3>
+                </div>
+                <div>
+                    <ContactForm />
+                </div>
+            </Container>
         </>
     );
 };
